@@ -50,7 +50,7 @@ const AddEntry = () => {
     e.preventDefault();
     
     try {
-      await axios.post('http://localhost:5000/api/entries', entry);
+      await axios.post(`${import.meta.env.VITE_SERVER_URL}/api/entries`, entry);
       navigate('/entries');
     } catch (error) {
       console.error('Error submitting entry:', error);

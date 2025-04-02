@@ -9,7 +9,7 @@ const ViewEntries = () => {
   useEffect(() => {
     const fetchEntries = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/entries');
+        const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/entries`);
         setEntries(response.data);
         setLoading(false);
       } catch (error) {

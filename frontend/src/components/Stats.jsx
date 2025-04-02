@@ -18,7 +18,7 @@ const Stats = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/stats?timeFrame=${timeFrame}`);
+        const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/stats?timeFrame=${timeFrame}`);
         setStats(response.data);
         setLoading(false);
       } catch (error) {
